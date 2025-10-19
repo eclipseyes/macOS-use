@@ -26,7 +26,7 @@ def set_llm(llm_provider:str = None):
 		return ChatGoogleGenerativeAI(model='gemini-2.0-flash-exp', api_key=SecretStr(os.getenv('GEMINI_API_KEY')))
 	
 	if llm_provider == "anthropic" and os.getenv('ANTHROPIC_API_KEY'):
-		return ChatAnthropic(model='claude-3-sonnet-20240229', api_key=SecretStr(os.getenv('ANTHROPIC_API_KEY')))
+		return ChatAnthropic(model='claude-3-5-sonnet-20241022', api_key=SecretStr(os.getenv('ANTHROPIC_API_KEY')))
 	
 	return None
 
