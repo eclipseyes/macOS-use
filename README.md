@@ -20,7 +20,7 @@ macOS-use enables AI agents to interact with your Macbook [see it in action!](#d
 
 # Quick start
 
-⚠️ Important: Review the [Warning](#warning) section before proceeding. <br>
+⚠️ Important: Review the [Warning](#warning) section before proceeding. `<br>`
 
 ### With pip:
 
@@ -31,37 +31,31 @@ pip install mlx-use
 ### From github
 
 Clone first
-<br>
+`<br>`
 
 ```bash
 git clone https://github.com/browser-use/macOS-use.git && cd macOS-use
 ```
 
-Don't forget API key <br>Supported providers: [OAI](https://platform.openai.com/docs/quickstart), [Anthropic](https://docs.anthropic.com/en/api/admin-api/apikeys/get-api-key) or [Gemini](https://ai.google.dev/gemini-api/docs/api-key) (deepseek R1 coming soon!)
+Don't forget API key `<br>`Supported providers: [OAI](https://platform.openai.com/docs/quickstart), [Anthropic](https://docs.anthropic.com/en/api/admin-api/apikeys/get-api-key) or [Gemini](https://ai.google.dev/gemini-api/docs/api-key) (deepseek R1 coming soon!)
 
-<br> At the moment, macOS-use works best with OAI or Anthropic API, although Gemini is free. While Gemini works great too, it is not as reliable.
-<br>
+`<br>` At the moment, macOS-use works best with OAI or Anthropic API, although Gemini is free. While Gemini works great too, it is not as reliable.
+`<br>`
 
 ```bash
-cp .env.example .env
+conda activate mlx-use
 ```
 
 ```bash
-open ./.env
+export OPEN_API_KEY = 'your-api-key'
+
+#or 
+
+export ANTHROPIC_API_KEY = 'your-api-key'
 ```
 
-We recommend using macOS-use with uv environment
-<br>
-
 ```bash
-brew install uv && uv venv && source .venv/bin/activate
-```
-
-Install locally and you're good to go! try the first exmaple!
-<br>
-
-```bash
-uv pip install --editable . && python examples/try.py
+python examples/try.py
 
 ```
 
@@ -75,7 +69,7 @@ open the calculator app
 
 <h3> Click the GIF for the full video! </h3>
 
-[prompt](https://github.com/browser-use/macOS-use/blob/main/examples/calculate.py): Calculate how much is 5 X 4 and return the result, then call done.
+[prompt](./examples/calculate.py): Calculate how much is 5 X 4 and return the result, then call done.
 
 ```bash
 python examples/calculate.py
@@ -84,23 +78,23 @@ python examples/calculate.py
 
 <br>
 
-[![calc-5-times-4](https://github.com/browser-use/macOS-use/blob/main/static/calc-5-X-4.gif "Click the GIF for full video!")](https://x.com/OfirOzeri/status/1883110905665433681)
+[![calc-5-times-4](./static/calc-5-X-4.gif "Click the GIF for full video!")](https://x.com/OfirOzeri/status/1883110905665433681)
 
 <br/>
 
-[prompt](https://github.com/browser-use/macOS-use/blob/main/examples/login_to_auth0.py): Go to auth0.com, sign in with google auth, choose ofiroz91 gmail account, login to the website and call done when you finish.
+[prompt](./examples/login_to_auth0.py): Go to auth0.com, sign in with google auth, choose ofiroz91 gmail account, login to the website and call done when you finish.
 
 ```bash
 python examples/login_to_auth0.py
 ```
 
- <br>
+<br>
 
-[![login-to-auth0](https://github.com/browser-use/macOS-use/blob/main/static/login-to-auth0.gif "Click for full video")](https://x.com/OfirOzeri/status/1883455599423434966)
+[![login-to-auth0](./static/login-to-auth0.gif "Click for full video")](https://x.com/OfirOzeri/status/1883455599423434966)
 
 <br/>
 
-[prompt](https://github.com/browser-use/macOS-use/blob/main/examples/check_time_online.py): Can you check what hour is Shabbat in israel today? call done when you finish.
+[prompt](./examples/check_time_online.py): Can you check what hour is Shabbat in israel today? call done when you finish.
 
 ```bash
 python examples/check_time_online.py
@@ -108,14 +102,14 @@ python examples/check_time_online.py
 
 <br>
 
-[![check-time-online](https://github.com/browser-use/macOS-use/blob/main/static/check-time-online.gif "Click for full video")](https://x.com/OfirOzeri/status/1883109604416278552)
+[![check-time-online](./static/check-time-online.gif "Click for full video")](https://x.com/OfirOzeri/status/1883109604416278552)
 
 <br>
 
 # Our Vision:
 
 TLDR: Tell every Apple device what to do, and see it done. on EVERY APP.
-<br><br>
+`<br><br>`
 This project aimes to build the AI agent for the MLX by Apple framework that would allow the agent to perform any action on any Apple device. Our final goal is a open source that anyone can clone, powered by the [mlx](https://github.com/ml-explore/mlx) and [mlx-vlm](https://github.com/Blaizzy/mlx-vlm) to run local private infrence at zero cost.
 
 ## Roadmap goals:
@@ -125,8 +119,8 @@ This project aimes to build the AI agent for the MLX by Apple framework that wou
 - [ ] Refine the Agent prompting.
 - [ ] Release the first working version to pypi.
 - [ ] Improve self-correction.
-- [x] Adding ability to check which apps the machine has installed.
-- [x] Add feature to allow the agent to check existing apps if failing, e.g. calendar app actual name is iCal.
+- [X] Adding ability to check which apps the machine has installed.
+- [X] Add feature to allow the agent to check existing apps if failing, e.g. calendar app actual name is iCal.
 - [ ] Add action for the agent to ask input from the user.
 - [ ] Test Test Test! and let us know what and how to improve!
 - [ ] Make task cheaper and more efficient.
@@ -144,12 +138,12 @@ This project aimes to build the AI agent for the MLX by Apple framework that wou
 # WARNING
 
 This project is still under development and user discretion is advised!
-macOS-use can and will use your do [login](#demos), use private credentials, [auth services](https://github.com/browser-use/macOS-use/blob/main/examples/login_to_auth0.py) or stored passwords to complete its task, launch and interact WITH EVERY APP and UI component in your MacBook and restrictions to the model are still under active development! It is not recommended to operate it unsupervised YET
+macOS-use can and will use your do [login](#demos), use private credentials, [auth services](./examples/login_to_auth0.py) or stored passwords to complete its task, launch and interact WITH EVERY APP and UI component in your MacBook and restrictions to the model are still under active development! It is not recommended to operate it unsupervised YET
 macOS-use WILL NOT STOP at captcha or any other forms of bot identifications, so once again, user discretion is advised.
 
 ## Disclaimer:
 
-As this is an early stage release, You might experience varying success rates depending on task prompt, we're actively working on improvements. <br> talk me on [X/Twitter](https://x.com/OfirOzeri) or contact me on [Discord](https://link.browser-use.com/discord), your input is crucial and highly valuable!<br>
+As this is an early stage release, You might experience varying success rates depending on task prompt, we're actively working on improvements. `<br>` talk me on [X/Twitter](https://x.com/OfirOzeri) or contact me on [Discord](https://link.browser-use.com/discord), your input is crucial and highly valuable!`<br>`
 
 # Contributing
 
